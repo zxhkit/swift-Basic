@@ -27,8 +27,8 @@ UIButtonTypeContactAdd => 枚举类型.枚举值(简写 .枚举值)
 二、常见和变量  
 参考:https://www.jianshu.com/p/3b01707fed18  
 
-三、 swift与OC的不同演示
-参考:https://www.jianshu.com/p/3b01707fed18  
+三、 swift与OC的不同演示      
+参考:https://www.jianshu.com/p/3b01707fed18     
 
 四、可选类型  
 参考:https://www.jianshu.com/p/3b01707fed18  
