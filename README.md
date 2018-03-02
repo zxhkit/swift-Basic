@@ -7,22 +7,22 @@ swift是一门新的语言,不过现在已经出到swift4了,也不信了,今天
 
 这里只介绍一些初学swift的基本概念,需要提前了解的东西
 
-swift语法和OC不一样,OC每一行代码都是以分号";"结尾的,但是swift结尾是没有结尾标识符的   
-OC只要语法正确就可以,不用整理格式,但是swift非常注重格式,比如 a = 3 ,在=的左右必须都有一个空格,或同时有多个,当=左右空格个数不一样时,比如 b= 2 这样会报错  
-OC调用方式的时候是,是类名或对象名+空格+方法名,然后用中括号括起来:[Person saveCall]; swift是类名或对象名+.+方法名即可: person.saveCall ,类似与OC的点语法  
-swift语法整体兼容OC,可以通过桥接和OC无缝对接  
-swift语法风格整体类似于Java  
-新建的swift类,只有一个.swift文件,没有.h文件和.m文件   
-swift可以使用cocoapods,方法同OC一样   
-不需要导入头文件,可以直接引用其他类里面的方法或属性   
-swift没有宏这个概念   
-swift没有类扩展这个概念  
-没有main.m文件 @UIApplicationMain是程序入口标识   
-class 标示声明类 {} 用来标识类的范围   
-构造函数 [xxx alloc] initWithXXX] ==> xxx(XXX:) ;[alloc init] => ()   
-UIButtonTypeContactAdd => 枚举类型.枚举值(简写 .枚举值)   
-在当前类中访问属性或者方法的时候 可以省略 self. 推荐不写, 后面的闭包中必须添加self.   
-按钮的监听事件 使用 #selector   
+1.swift语法和OC不一样,OC每一行代码都是以分号";"结尾的,但是swift结尾是没有结尾标识符的   
+2.OC只要语法正确就可以,不用整理格式,但是swift非常注重格式,比如 a = 3 ,在=的左右必须都有一个空格,或同时有多个,当=左右空格个数不一样时,比如 b= 2 这样会报错  
+3.OC调用方式的时候是,是类名或对象名+空格+方法名,然后用中括号括起来:[Person saveCall]; swift是类名或对象名+.+方法名即可: person.saveCall ,类似与OC的点语法  
+4.swift语法整体兼容OC,可以通过桥接和OC无缝对接  
+5swift语法风格整体类似于Java  
+6.新建的swift类,只有一个.swift文件,没有.h文件和.m文件   
+7.swift可以使用cocoapods,方法同OC一样   
+8.不需要导入头文件,可以直接引用其他类里面的方法或属性   
+9.swift没有宏这个概念   
+10.swift没有类扩展这个概念  
+11.没有main.m文件 @UIApplicationMain是程序入口标识    
+12.class 标示声明类 {} 用来标识类的范围    
+13.构造函数 [xxx alloc] initWithXXX] ==> xxx(XXX:)   [alloc init] => ()   
+14.UIButtonTypeContactAdd => 枚举类型.枚举值(简写 .枚举值)   
+15.在当前类中访问属性或者方法的时候 可以省略 self. 推荐不写, 后面的闭包中必须添加self.   
+16.按钮的监听事件 使用 #selector   
 
 二、常见和变量  
 参考:https://www.jianshu.com/p/3b01707fed18  
