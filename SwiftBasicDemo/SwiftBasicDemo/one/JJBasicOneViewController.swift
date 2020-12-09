@@ -15,12 +15,12 @@ class JJBasicOneViewController: UIViewController {
         self.title = "swift基础知识(一)"
         self.view.backgroundColor = .white
         
-        let area1 = getArea(a: 2, b: 4)
-        let area2 = getArea2(width: 3, height: 4)
-        print(area1,area2)
+//        let area1 = getArea(a: 2, b: 4)
+//        let area2 = getArea2(width: 3, height: 4)
+//        print(area1,area2)
         
-        numOne()
-        testDemo5()
+//        numOne()
+        testDemo2()
     }
     
     
@@ -48,7 +48,7 @@ class JJBasicOneViewController: UIViewController {
      */
     
     /*----------------------------        Demo1        ----------------------------*/
-    // MARK: - 常量和变量 First
+    // MARK: - 常量和变量
     func testDemo1() {
         
         let a = 10
@@ -69,8 +69,7 @@ class JJBasicOneViewController: UIViewController {
          小数默认类型是double
          let d: CGFloat = 20.3  这属于手动指定类型
          */
-        
-        
+       
         // let res1 = c + d   -->  会报错
         let res2 = c + Int(d)
         print(res2)
@@ -87,11 +86,48 @@ class JJBasicOneViewController: UIViewController {
     }
     
     
+    /*--------------------------       Demo2       --------------------------------*/
+    // MARK: - 常见数据类型
+    func testDemo2() {
+        
+        //在声明变量的时候,可以直接指定类型; 也可以不指定类型,直接赋值,系统会根据结果判断类型
+        
+        // 布尔变量
+        let a = true
+        var b: Bool
+        b = false
+        
+        print(a,b)//打印结果 : true false
+        
+        //a,b两个都是布尔变量
+        //数组:Array
+        var arr = [String]()
+        var data = ["ab"]
+        var list = [Any]()
+        
+        arr.append("3")
+        data.append("5")
+        list.append(3)
+        list.append("5")
+        
+        print(arr)  //打印结果 : ["3"]
+        print(data) //打印结果 : ["ab", "5"]
+        print(list) //打印结果 : [3, "5"]
+        
+        //字符串:String
+        
+        //字典:Dictionary
+        
+        //整型:Int
+        
+        //Double
+
+    }
     
     
     /*--------------------------       Demo2       --------------------------------*/
     // MARK: - swift与OC的不同
-    func testDemo2() {
+    func testDemo22() {
         let myView = UIView(frame: CGRect(x: 100, y: 100, width: 100, height: 100))
         // myView.backgroundColor = UIColor.yellow
         myView.backgroundColor = #colorLiteral(red: 1, green: 0.3233583075, blue: 0.3979080506, alpha: 1)
@@ -131,9 +167,9 @@ class JJBasicOneViewController: UIViewController {
         //这就是一个可选类型
         //不能够对可选类型做强制解包
         
-        var b: Int? = 15
+        let b: Int? = 15
         let c = (b ?? 0) + 20
-        var d = 10
+        let d = 10
         let res = 20 + d
         
         print(res,(b ?? 0),c,d)
@@ -148,12 +184,31 @@ class JJBasicOneViewController: UIViewController {
          -- 一定要考虑是否安全 一定有值 防患于未然
          -- '??' 合并空选项 必须提高 ?? 的优先级
          */
+         
+        
+        
+        
+        
+        
+        
     }
+    
+    /*--------------------------------   类型转换   ------------------------------------*/
+    
+    // MARK: - 类型转换
+    func testDemo4() {
+        //整数类型
+        
+        
+       
+    }
+    
+    
     
     
     /*----------------------------------------------------------------------------*/
     // MARK: - 分支结构
-    func testDemo4() {
+    func testDemo44() {
         //1.分支结构 if语句
         /*
          1. 条件语句没有 () ,可以写 但不推荐写
