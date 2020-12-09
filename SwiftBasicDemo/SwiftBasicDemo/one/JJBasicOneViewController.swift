@@ -20,14 +20,8 @@ class JJBasicOneViewController: UIViewController {
         print(area1,area2)
         
         numOne()
-        fiveDemo()
+        testDemo5()
     }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
     
     
     // MARK: - 基本介绍
@@ -53,9 +47,9 @@ class JJBasicOneViewController: UIViewController {
      16.按钮的监听事件 使用 #selector
      */
     
-    /*----------------------------------------------------------------------------*/
+    /*----------------------------        Demo1        ----------------------------*/
     // MARK: - 常量和变量 First
-    func firstDemo1() {
+    func testDemo1() {
         
         let a = 10
         // a = 2   ----> 会报错 let定义的变量不能改变,不能进行赋值
@@ -64,7 +58,7 @@ class JJBasicOneViewController: UIViewController {
         
         var b = 20
         b = 30   //不会报错,var定义的变量是可以被修改的
-        
+        print(b)
         
         let c: Int = 10
         let d: CGFloat = 20.3
@@ -77,7 +71,7 @@ class JJBasicOneViewController: UIViewController {
          */
         
         
-        //        let res1 = c + d   -->  会报错
+        // let res1 = c + d   -->  会报错
         let res2 = c + Int(d)
         print(res2)
         /*
@@ -86,18 +80,25 @@ class JJBasicOneViewController: UIViewController {
          转换类型: 通过类型调用构造函数 传递参数转换 ,或as语法
          */
         
+        
+        
+        // let f: Int
+        // print(f) //报错,未初始化之前都不能使用
     }
     
-    /*----------------------------------------------------------------------------*/
+    
+    
+    
+    /*--------------------------       Demo2       --------------------------------*/
     // MARK: - swift与OC的不同
-    func scondDemo() {
+    func testDemo2() {
         let myView = UIView(frame: CGRect(x: 100, y: 100, width: 100, height: 100))
-        //        myView.backgroundColor = UIColor.yellow
+        // myView.backgroundColor = UIColor.yellow
         myView.backgroundColor = #colorLiteral(red: 1, green: 0.3233583075, blue: 0.3979080506, alpha: 1)
         //color Literal属性
         
         let btn = UIButton(type: UIButton.ButtonType.custom)
-        //let btn1 = UIButton(type: .contactAdd)  可以简写 直接.+枚举
+        // let btn1 = UIButton(type: .contactAdd)  //可以简写 直接.+枚举
         myView.addSubview(btn)
         
         //添加到根视图
@@ -112,14 +113,21 @@ class JJBasicOneViewController: UIViewController {
         print("我被点击了")
     }
     
-    /*----------------------------------------------------------------------------*/
+    
+    
+    
+    
+    /*--------------------------------       Demo3       --------------------------------*/
     // MARK: - 可选类型
-    func thirdDemo() {
+    func testDemo3() {
         //可选类型有可能有值,也有可能为nil
         //let声明可选类型是没有意义的
         //必选类型一定有值
         var a:Int? = 10
         a = nil
+        print(a ?? 1)
+        
+        
         //这就是一个可选类型
         //不能够对可选类型做强制解包
         
@@ -145,7 +153,7 @@ class JJBasicOneViewController: UIViewController {
     
     /*----------------------------------------------------------------------------*/
     // MARK: - 分支结构
-    func fourDemo() {
+    func testDemo4() {
         //1.分支结构 if语句
         /*
          1. 条件语句没有 () ,可以写 但不推荐写
@@ -230,7 +238,7 @@ class JJBasicOneViewController: UIViewController {
     
     /*----------------------------------------------------------------------------*/
     // MARK: - 循环
-    func fiveDemo() {
+    func testDemo5() {
         let range = 0...10
         for i in range {
             print(i)
@@ -253,7 +261,7 @@ class JJBasicOneViewController: UIViewController {
     /*----------------------------------------------------------------------------*/
     
     // MARK: - 字符串
-    func sixDemo() {
+    func testDemo6() {
         //字符串的本质是结构体
         let str: String = "长得帅可以撩妹,长丑是骚扰"
         //String和NSString可以相互转换
@@ -310,7 +318,7 @@ class JJBasicOneViewController: UIViewController {
     }
     /*----------------------------------------------------------------------------*/
     // MARK: - 集合:数组,字典
-    func sevenDemo() {
+    func testDemo7() {
         //1.数组的声明 和 空数组的实例化
         //不推荐在数组中放不同的元素
         let array: [Any] = ["阿大,阿二,阿三",18]
@@ -378,7 +386,7 @@ class JJBasicOneViewController: UIViewController {
         
     }
     /*----------------------------------------------------------------------------*/
-
+    //testDemo8
     // MARK: - 函数
     func getArea(a: Int,b: Int) -> Int {
         return a * b
@@ -400,5 +408,13 @@ class JJBasicOneViewController: UIViewController {
     }
     
     /*----------------------------------------------------------------------------*/
+    
+    
+    func testDemo9() {
+        
+        
+        
+        
+    }
 
 }
