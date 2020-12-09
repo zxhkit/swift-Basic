@@ -1,18 +1,19 @@
 //
-//  ViewController.swift
-//  swift基础知识
+//  JJBasicOneViewController.swift
+//  SwiftBasicDemo
 //
-//  Created by rookie on 2018/2/28.
-//  Copyright © 2018年 zxh. All rights reserved.
+//  Created by 播呗网络 on 2020/12/9.
 //
 
 import UIKit
 
-class ViewController: UIViewController {
+class JJBasicOneViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        self.title = "swift基础知识(一)"
+        self.view.backgroundColor = .white
         
         let area1 = getArea(a: 2, b: 4)
         let area2 = getArea2(width: 3, height: 4)
@@ -95,7 +96,7 @@ class ViewController: UIViewController {
         myView.backgroundColor = #colorLiteral(red: 1, green: 0.3233583075, blue: 0.3979080506, alpha: 1)
         //color Literal属性
         
-        let btn = UIButton(type: UIButtonType.custom)
+        let btn = UIButton(type: UIButton.ButtonType.custom)
         //let btn1 = UIButton(type: .contactAdd)  可以简写 直接.+枚举
         myView.addSubview(btn)
         
@@ -401,4 +402,3 @@ class ViewController: UIViewController {
     /*----------------------------------------------------------------------------*/
 
 }
-
