@@ -20,7 +20,6 @@ class JJBasicOneViewController: UIViewController {
 //        print(area1,area2)
         
 //        numOne()
-        testDemo11()
     }
     
     
