@@ -80,8 +80,6 @@ class JJBasicOneViewController: UIViewController {
          转换类型: 通过类型调用构造函数 传递参数转换 ,或as语法
          */
         
-        
-        
         // let f: Int
         // print(f) //报错,未初始化之前都不能使用
     }
@@ -284,7 +282,7 @@ class JJBasicOneViewController: UIViewController {
         } while(ber > 0);
         
         
-        
+        // 循环的范围可以直接定义出来使用
         let range = 0...10
         for i in range {
             print(i)
