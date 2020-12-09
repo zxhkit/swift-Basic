@@ -20,7 +20,7 @@ class JJBasicOneViewController: UIViewController {
 //        print(area1,area2)
         
 //        numOne()
-        testDemo2()
+        testDemo11()
     }
     
     
@@ -86,48 +86,10 @@ class JJBasicOneViewController: UIViewController {
     }
     
     
-    /*--------------------------       Demo2       --------------------------------*/
-    // MARK: - 常见数据类型
-    func testDemo2() {
-        
-        //在声明变量的时候,可以直接指定类型; 也可以不指定类型,直接赋值,系统会根据结果判断类型
-        
-        // 布尔变量
-        let a = true
-        var b: Bool
-        b = false
-        
-        print(a,b)//打印结果 : true false
-        
-        //a,b两个都是布尔变量
-        //数组:Array
-        var arr = [String]()
-        var data = ["ab"]
-        var list = [Any]()
-        
-        arr.append("3")
-        data.append("5")
-        list.append(3)
-        list.append("5")
-        
-        print(arr)  //打印结果 : ["3"]
-        print(data) //打印结果 : ["ab", "5"]
-        print(list) //打印结果 : [3, "5"]
-        
-        //字符串:String
-        
-        //字典:Dictionary
-        
-        //整型:Int
-        
-        //Double
-
-    }
     
-    
-    /*--------------------------       Demo2       --------------------------------*/
+    /*--------------------------       Demo2      --------------------------------*/
     // MARK: - swift与OC的不同
-    func testDemo22() {
+    func testDemo2() {
         let myView = UIView(frame: CGRect(x: 100, y: 100, width: 100, height: 100))
         // myView.backgroundColor = UIColor.yellow
         myView.backgroundColor = #colorLiteral(red: 1, green: 0.3233583075, blue: 0.3979080506, alpha: 1)
@@ -149,13 +111,28 @@ class JJBasicOneViewController: UIViewController {
         print("我被点击了")
     }
     
-    
-    
-    
-    
     /*--------------------------------       Demo3       --------------------------------*/
-    // MARK: - 可选类型
+    // MARK: - 元组
     func testDemo3() {
+        //元组可以吧多个值组合成一个复合值.元组内的数据可以是任意类型的,重点:不要求元素的类型相同
+        //不想接收值,直接用下划线_代替
+        //可以使用标签,类似于字典
+        
+        let xiaoming = (25,"小明","清华大学")
+        print(xiaoming.0,xiaoming.1)
+        
+        let (age, name, _) = xiaoming
+        print(age,name)
+        
+        let xiaozhou = (age: 29, name: "神合")
+        print(xiaozhou.age,xiaozhou.name)
+
+    }
+    
+    
+    /*--------------------------------       Demo4      --------------------------------*/
+    // MARK: - 可选类型
+    func testDemo4() {
         //可选类型有可能有值,也有可能为nil
         //let声明可选类型是没有意义的
         //必选类型一定有值
@@ -184,38 +161,20 @@ class JJBasicOneViewController: UIViewController {
          -- 一定要考虑是否安全 一定有值 防患于未然
          -- '??' 合并空选项 必须提高 ?? 的优先级
          */
-         
-        
-        
-        
-        
-        
         
     }
     
-    /*--------------------------------   类型转换   ------------------------------------*/
-    
-    // MARK: - 类型转换
-    func testDemo4() {
-        //整数类型
-        
-        
-       
-    }
-    
-    
-    
-    
-    /*----------------------------------------------------------------------------*/
+    /*------------------------------       Demo5       -------------------------------*/
     // MARK: - 分支结构
-    func testDemo44() {
+    func testDemo5() {
         //1.分支结构 if语句
         /*
          1. 条件语句没有 () ,可以写 但不推荐写
          2. 分支结构必须有 {}
          3. 没有 非零即真的概念,只有 true 和 false
          */
-        let a = 13
+        var a = 13
+        a = Int(arc4random_uniform(18))
         if a < 14 {
             print("小,很小,非常小")
         } else {
@@ -228,14 +187,17 @@ class JJBasicOneViewController: UIViewController {
         let url = URL(string: urlString)
         if url != nil {
             let req1 = URLRequest(url: url!)
+            print(req1)
         }
         
-        
+        //swift特有的写法 if let 和 guard
+        //上面的if还可以写成这样
         if let url2 = URL(string: urlString) {
             let req2 = URLRequest(url: url2)
+            print(req2)
         }
         
-        
+        //只有当url2不为空的时候,才会执行里面的代码
         
        //3. guard(守卫) let else
         /*
@@ -244,25 +206,27 @@ class JJBasicOneViewController: UIViewController {
          */
         
         let urlStr = "http://www.zxhkit.com"
-        guard var url1 = URL(string: urlStr) else {
+        guard let url1 = URL(string: urlStr) else {
             //不希望guard 能够被穿透
             //如果url1 为nil 就进入else 分支 会直接return
             return
         }
         
-        let req = URLRequest(url: url1)
-        
-        
+        let req3 = URLRequest(url: url1)
+        print(req3)
+
         //4.guard 多个可选值的判断
-        var age1: Int? = 15
-        var age2: Int? = 20
+        var age1: Int?
+        var age2: Int?
+        
+        age1 = 15
+        age2 = 20
         
         if age1 != nil && age2 == nil {
-            
+            print(age1!,age2!)
         }
         
-        guard let ag1 = age1,let ag2 = age2 else {
-            print("嘎嘎嘎")
+        guard let _ = age1,let _ = age2 else {
             return;
         }
         
@@ -288,12 +252,38 @@ class JJBasicOneViewController: UIViewController {
         default:
             print("逗比")
         }
-        
+                
     }
     
-    /*----------------------------------------------------------------------------*/
+    
+    /*------------------------------         Demo6        ------------------------------*/
     // MARK: - 循环
-    func testDemo5() {
+    func testDemo6() {
+        
+        // while语句
+        var num = 5
+        while num > 0 {
+            print(num)
+            num -= 1
+        }
+        //打印结果:
+        /*
+        5
+        4
+        3
+        2
+        1
+        */
+        
+        //repeat-while相当于OC中的do-while
+        var ber = -4
+        repeat {
+            ber += 1
+            print(ber)
+        } while(ber > 0);
+        
+        
+        
         let range = 0...10
         for i in range {
             print(i)
@@ -301,7 +291,7 @@ class JJBasicOneViewController: UIViewController {
         print("----------------------")
         
         //遍历0到10,不加包括10,   0..<10 表示不包括10
-        for i in 0...10 {
+        for i in 0..<10 {
             print(i)
         }
         
@@ -311,12 +301,83 @@ class JJBasicOneViewController: UIViewController {
             print("😑")
         }
         
-        let _ = 11
+        print("----------------------")
+
+        let names = ["anni","roky","lily","bob","jeem"]
+        for name in names {
+            print(name)
+            //这里可以打印出来每一个元素值
+        }
+        
+        for name in names[0...2] {
+            //只会打印前三个
+            print(name)
+        }
+        
+        for name in names[..<2] {
+            //半开区间,只会打印前三个
+            print(name)
+        }
+        
+        
+        //continue和break的使用
+        //break将直接跳出当前循环
+        //continue继续当前循环,但是continue后面的代码不再执行
+        for i in 1...10 {
+            if i == 2 {
+                continue
+            }
+            if i > 7 {
+                break
+            }
+            print(i)
+        }
+        
+        
+
+    }
+    
+    /*---------------------------        Demo7        -----------------------------*/
+    // MARK: - range
+    func testDemo7() {
+
+        // 补偿一点:range
+        let range = 0...9
+        let isHave = range.contains(4)
+        print(isHave)//结果是怎么样的呢
+        
+        let range1: ClosedRange<Int> = 1...5
+        let range2: Range<Int> = 1..<6
+        let range3: PartialRangeThrough<Int> = ...5
+
+        print(range1,range2,range3)
+        
+        
+        let strRange1 = "a"..."f"
+        let isRh = strRange1.contains("b")//结果:true
+        
+        let strRange2 = "cc"..."ff"
+        let isRh1 = strRange2.contains("cb")//结果:false
+        let isRh2 = strRange2.contains("dz")//结果:true
+        let isRh3 = strRange2.contains("fg")//结果:false
+
+        print(isRh,isRh1,isRh2,isRh3)
+        
+        //从打印结果看,表示两个字母都必须在这个范围内
+        
+        let time = 13
+        let margin = 2
+        for item in stride(from: 4, through: time, by: margin) {
+            print(item)
+            //表示从4开始,一次累加2,直到13(不超过13)
+        }
+        
+        
     }
     /*----------------------------------------------------------------------------*/
     
     // MARK: - 字符串
-    func testDemo6() {
+    func testDemo8() {
         //字符串的本质是结构体
         let str: String = "长得帅可以撩妹,长丑是骚扰"
         //String和NSString可以相互转换
@@ -373,7 +434,7 @@ class JJBasicOneViewController: UIViewController {
     }
     /*----------------------------------------------------------------------------*/
     // MARK: - 集合:数组,字典
-    func testDemo7() {
+    func testDemo9() {
         //1.数组的声明 和 空数组的实例化
         //不推荐在数组中放不同的元素
         let array: [Any] = ["阿大,阿二,阿三",18]
@@ -423,8 +484,10 @@ class JJBasicOneViewController: UIViewController {
          [String : Any] 是最常见的字典格式
          */
         let dict: [String : Any] = ["name" : "玄哥","age" : "21"]
+        print(dict)
         //声明空字典
         var emptyDict = [String : Any]()
+        emptyDict["key"] = "eee"
         var dic: [String : Any] = ["name" : "玄哥","age" : "21"]
 
         //增
@@ -440,8 +503,37 @@ class JJBasicOneViewController: UIViewController {
         }
         
     }
-    /*----------------------------------------------------------------------------*/
-    //testDemo8
+    
+    
+    
+    /*------------------------          wherr          ----------------------------*/
+    // MARK: - where
+    func testDemo10() {
+        
+        //where搭配switch语法的使用
+        let point = (1, 1)
+        switch point {
+        case let (x, y) where x == y :
+            print("特殊点",x,y)
+            break
+        default:
+            break
+        }
+        
+        //where搭配for循环语法的使用
+        
+        let items = [12,14,23,42,23,100]
+        
+        for item in items where item > 99 {
+            print(item)
+            //结果:100
+        }
+        //从上面列子可以看出where就是一个条件选择
+        
+    }
+    
+    /*-----------------------      testDemo11      -----------------------*/
+    //testDemo11
     // MARK: - 函数
     func getArea(a: Int,b: Int) -> Int {
         return a * b
@@ -460,16 +552,6 @@ class JJBasicOneViewController: UIViewController {
         }
         //内部调用
         numTwo(a: 2, b: 4)
-    }
-    
-    /*----------------------------------------------------------------------------*/
-    
-    
-    func testDemo9() {
-        
-        
-        
-        
     }
 
 }
